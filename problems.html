@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problems</title>
+    <link rel="stylesheet" href="./shared.css">
+    <link rel="stylesheet" href="./styleProblems.css">
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.png" class="logo" />
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav class="nav-bar">
+        <ul class="nav-items">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./portfolio.html">Portfolio</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+    </header>
+    <section id="pageDescription" class="problems-content">
+        <h1>Hello! These are my problems <small>(except for the mental ones)</small> !</h1>
+        <label
+      >1. Cititi de la tastatura trei numere intregi, apoi afisati-le in ordine
+      inversa, cate unul pe un rand:</label
+    >
+    <br />
+    <form name="input_form" action="javascript:validate();">
+      <label for="a">a: </label>
+      <input type="number" name="aterm" required size="5px" />
+      <label for="b">b: </label>
+      <input type="number" name="bterm" required size="5px" />
+      <label for="c">c: </label>
+      <input type="number" name="cterm" required size="5px" />
+      <input type="submit" id="btn" value="Calculeaza" />
+      <p id="output_text"></p>
+    </form>
+
+    <!--A doua problema-->
+    <label for="" onload="document.forms[0][0].focus()"
+      >2. Calculati media aritmetica a patru valori intregi citite de la
+      tastatura. Citirea si afisarea sa fie prietenoasa cu utilizatorul.</label
+    > <br>
+    <input type="text" id="medie" placeholder="Introduceti numerele"></input>
+    <button onclick="calculateMeanAverage()" id="btn">Calculeaza</button> <br>
+    <input type="number" id="media" placeholder="Rezultatul"> <br> <br>
+
+    <!--A treia-->
+    <div>
+    <label> 3. Calculati minimul dintr-un input.</label> <br>
+    <input type="text" id="minim" placeholder="Introduceti numerele">
+    <button onclick="calculateMinimum()" id="btn">Calculeaza</button> <br>
+    <input type="text" id="result" placeholder="Rezultatul"><br> <br>
+    </div>
+
+    <!--A 4-a-->
+    <div>
+    <label> 4. Calculati maximul dintr-un input.</label> <br>
+    <input type="text" id="maxim" placeholder="Introduceti numerele">
+    <button onclick="calculateMaximum()" id="btn">Calculeaza</button> <br>
+    <input type="text" id="resultMaxim" placeholder="Rezultatul"> <br> <br>
+    </div>
+
+    <!--5. Sortare-->
+    <label>5. Sorteaza valorile dintr-un input.</label><br>
+    <input type="text" id="sort" placeholder="Introduceti numerele">
+    <button onclick="sortNumbers()" id="btn">Calculeaza</button>
+    <input type="text" id="resultSort" placeholder="Rezultatul"> <br> <br>
+
+    <!--6. Numere pare-->
+    <label>6. Dispaly only the even numbers from the input</label> <br>
+    <input type="text" id="even" placeholder="Enter the numbers">
+    <button onclick="displayEvenNumbers()" id="btn">Calculate</button> 
+    <input type="text" id="resultEven" placeholder="Result"> <br> <br>
+
+    <!--7. Numere impare-->
+    <label>7. Dispaly only the odd numbers from the input</label> <br>
+    <input type="text" id="odd" placeholder="Enter the numbers">
+    <button onclick="displayOddNumbers()" id="btn">Calculate</button>
+    <input type="text" id="resultOdd" placeholder="Result"> <br> <br>
+
+    <!--8. Fibonacci-->
+    <label>8. Fibonacci series up to n terms. Enter the number of terms:</label> <br>
+    <input type="text" id="fibonacciInput">
+    <button onclick="displayFibonacci()" id="btn">Calculate</button> <br>
+    <label>Fibonacci series:</label>
+    <input type="text" id="fibonacciResult"><br> <br>
+
+    <!--9. Diferenta-->
+    <label>9. Să se scrie un program care citeşte de la tastatură trei numere naturale și determină diferenţa dintre cel mai mare şi cel mai mic.</label><br>
+    <input type="text" id="differenceInput">
+    <button onclick="displayDifference()" id="btn">Calculate</button> <br>
+    <input type="text" id="differenceResult"><br> <br>
+
+    <!--10. Cifre impare in nr-->
+    <label>10. Se citește de la tastatură un număr natural de 3 cifre. Să se determine câte cifre impare conține.</label><br>
+    <input type="text" id="oddInput">
+    <button onclick="displayOdd()" id="btn">Calculate</button> <br>
+    <input type="text" id="oddResult"><br> <br>
+
+    <!--11. Luni calendaristice-->
+    <label>11. Scrieți un program care citește un număr natural nenul n și care afișează numele lunii calendaristice corespunzătoare numărului n.</label><br>
+    <input type="number" id="monthNumber" min="1" max="12">
+    <button onclick="displayMonth()" id="btn">Calculate</button> <br>
+    <input type="text" id="monthResult"><br> <br>
+
+    <!--12. Cifre egale-->
+    <label>12. Se citește de la tastatură un număr natural de 3 cifre. Să se stabilească dacă are toate cifrele egale.</label><br>
+    <input type="text" id="userInput">
+    <button onclick="displayEqual()" id="btn">Calculate</button> <br>
+    <input type="text" id="equalResult"><br> <br>
+
+    <!--13. CNP-->
+    <label>13. Se dă un număr natural n cu exact 13 cifre reprezentând un cod numeric personal. Să se afișeze anul, luna și ziua nașterii deținătorului.</label><br>
+    <input type="text" id="cnp">
+    <button onclick="displayBirthday()" id="btn">Calculate</button> <br>
+    <label>Year:</label>
+    <input type="text" id="year"> 
+    <label>Month:</label>
+    <input type="text" id="month">
+    <label>Day:</label>
+    <input type="text" id="day"><br> <br>
+    </section>
+ <footer id="pageFooter">
+      <div>
+        <span id="copyright">
+    <script src="./sharedJS.js"></script>
+        </span>
+        &copy;Andreea Dinu
+      </div>
+    </footer>    <script src="./problemeJs.js"></script>
+  </body>
+</html>

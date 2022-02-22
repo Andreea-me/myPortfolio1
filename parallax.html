@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax website</title>
+    <!-- <link rel="stylesheet" href="./shared.css" /> -->
+    <link rel="stylesheet" href="./parallax.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="./parallax.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./portfolio.html" class="neon-button">Back to portfolio</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav class="nav-bar">
+        <ul class="nav-items">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+    </header>
+    <section>
+      <h2 id="text"><span>Let's focus on this</span><br />Parallax</h2>
+      <a href="#" id="btn">Press the scroll wheel, then scroll down</a>
+      <img src="./images/sky.jpeg" id="sky" />
+      <img src="./images/mountainF.png" id="mountain" />
+    </section>
+    <div class="text-scroll" id="home">
+      <h2>Parallax Scrolling Effects</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, incidunt
+        dicta. Natus accusantium necessitatibus corrupti voluptates corporis
+        cumque enim sit, porro reiciendis itaque iste soluta nam quo eligendi
+        impedit quam, amet eaque a officiis ipsum deleniti deserunt repellendus
+        pariatur temporibus! Ullam odio laborum iusto veritatis aspernatur?
+        Facilis quidem dolorum corrupti quo fugiat eum tenetur ad neque. Magnam
+        earum, consequatur perspiciatis aperiam nemo necessitatibus blanditiis
+        eos illo, quidem ipsum repudiandae asperiores maxime aut molestias hic
+        atque eveniet beatae! Illum eos sed fugiat, illo, dolorum itaque
+        corrupti adipisci ad explicabo rerum molestias quo obcaecati esse nobis
+        quidem. Velit labore unde nostrum deserunt?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+        molestias atque similique cum est quidem ipsam a, sapiente quos?
+        Repudiandae sequi molestiae commodi assumenda eveniet architecto,
+        quibusdam cumque laudantium, ab facere corporis, officia dicta dolores
+        culpa cupiditate dolor unde esse. Repellendus quisquam eos, dolorem
+        dicta odit corporis nam dolores consectetur. Ad, deleniti in tenetur
+        praesentium quia aut ut quos enim veritatis, earum ex error rerum
+        reiciendis nemo ratione? Deserunt natus neque, facere nemo illo laborum
+        ab tenetur. Accusamus maiores voluptatibus necessitatibus aliquam, vero
+        nulla velit ullam earum nemo sed, quis animi soluta blanditiis
+        laboriosam dolore incidunt vel, iusto iure quae minus? Quasi iusto
+        rerum, nisi nobis illo quaerat enim sequi culpa similique temporibus
+        iure tenetur sunt qui voluptatem quos deleniti! Magnam blanditiis ullam
+        culpa, laudantium adipisci quas recusandae voluptatum assumenda! Numquam
+        exercitationem enim aspernatur explicabo totam facilis sunt vel possimus
+        velit fuga! Minima in exercitationem veritatis amet aut odit delectus
+        cum quos debitis eveniet possimus sed laudantium alias itaque, quisquam
+        animi inventore reprehenderit ea repellendus eos aperiam laborum
+        temporibus mollitia? Cum nisi quaerat ipsum id aperiam sunt, nihil ea
+        sed corrupti eaque, mollitia reprehenderit. Laboriosam, sed inventore
+        omnis temporibus saepe doloremque delectus nostrum placeat natus!
+        Consequuntur sapiente sint recusandae provident.
+      </p>
+    </div>
+    <div class="container">
+      <div class="more-stuff-grid" id="about">
+        <img src="./images/mini-parallax-1.jpg" alt="" data-aos="fade-right"  data-aos-duration="1000" />
+        <p data-aos="fade-left"  data-aos-duration="1000">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit,
+          quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet
+          omnis sapiente neque cumque consequuntur reiciendis deserunt. Dolorem
+          vero exercitationem consequuntur, eligendi cupiditate debitis facilis
+          quibusdam magni. Eveniet.
+        </p>
+      </div>
+      <div class="parallax-images parallax-1"></div>
+
+      <div class="more-stuff-grid" id="skills">
+        <p data-aos="fade-right"  data-aos-duration="1000">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit,
+          quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet
+          omnis sapiente neque cumque consequuntur reiciendis deserunt. Dolorem
+          vero exercitationem consequuntur, eligendi cupiditate debitis facilis
+          quibusdam magni. Eveniet.
+        </p>
+        <img src="./images/mini-parallax-2.jpg" alt="" data-aos="fade-left"  data-aos-duration="1000"/>
+      </div>
+      <div class="parallax-images parallax-2"></div>
+      <div class="more-stuff-grid" id="services">
+        <img src="./images/mini-parallax-3.jpg" alt="" data-aos="fade-right"  data-aos-duration="1000" />
+        <p data-aos="fade-left"  data-aos-duration="1000">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit,
+          quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet
+          omnis sapiente neque cumque consequuntur reiciendis deserunt. Dolorem
+          vero exercitationem consequuntur, eligendi cupiditate debitis facilis
+          quibusdam magni. Eveniet.
+        </p>
+      </div>
+
+      <div class="parallax-images parallax-3"></div>
+      <p class="last-paragraph" id="contact" data-aos="fade-up" data-aos-duration="1000">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quo nisi
+        consequatur nesciunt a harum! Fugiat provident nobis voluptas voluptatem
+        amet magni accusantium atque impedit harum totam nam, ut inventore
+        explicabo, similique dignissimos earum debitis accusamus dolorum,
+        repellendus facere! Veritatis magnam tenetur accusantium nam quos est
+        labore, animi numquam. Velit aut eaque temporibus nihil dolores voluptas
+        explicabo rerum obcaecati quia earum, itaque tempora sit minima eius,
+        quae expedita eligendi enim laudantium animi nostrum. Similique saepe
+        voluptates, praesentium necessitatibus autem recusandae modi natus
+        reiciendis quaerat, facere culpa neque doloremque consequatur sint
+        incidunt! Fuga officia nisi quia expedita voluptatum animi est
+        exercitationem recusandae nesciunt suscipit necessitatibus officiis
+        atque repellat, accusamus incidunt culpa? Inventore sint fugiat totam
+        nisi alias enim sapiente! Praesentium tempora doloribus tenetur a. Aut
+        nostrum consequatur architecto rem atque, non ipsum ullam fugit eaque
+        iste sint soluta delectus mollitia aspernatur odit necessitatibus
+        eveniet. Sed amet optio, ut asperiores, aut, adipisci unde vel
+        praesentium veniam consectetur voluptatem non fuga vitae eos. Error hic
+        quidem maiores sint possimus! Quidem, recusandae libero sed laboriosam
+        commodi assumenda ipsum ab soluta ducimus animi numquam quasi, id
+        excepturi dolor maxime atque voluptatem necessitatibus labore autem?
+        Asperiores tempora esse sequi quia non fuga recusandae, voluptatibus
+        blanditiis ex!
+      </p>
+      <p class="last-paragraph" data-aos="flip-up" data-aos-duration="1000">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam
+        dolores recusandae temporibus labore aspernatur alias dolore cum,
+        dignissimos quaerat magni repellendus autem quas perspiciatis unde
+        obcaecati consectetur dolor nam expedita? Illo culpa incidunt sed
+        excepturi amet, aut temporibus laudantium unde accusantium facere
+        sapiente fugiat numquam ducimus omnis labore eius veritatis ut
+        voluptatum enim consectetur deserunt consequuntur, distinctio, nihil
+        illum! Obcaecati, in. Dignissimos iure similique magni sed voluptatum
+        cum nostrum officia voluptates aliquid cupiditate eveniet nobis esse
+        recusandae, ipsam exercitationem! Aut, quibusdam id magni neque
+        voluptatem at impedit numquam laudantium dolorum ea explicabo quidem
+        iure consequuntur nobis ratione voluptatibus error veritatis?
+      </p>
+    </div>
+     <div class="scrollTop" onclick="scrollToTop()"> <i class="fas fa-arrow-up"></i></div>
+    <!-- <footer id="pageFooter">&copy;Andreea Dinu 2021</footer> -->
+    <script src="./parallax.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init()
+    </script>
+  </body>
+</html>

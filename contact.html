@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./shared.css" />
+    <link rel="stylesheet" href="./styleContact.css" />
+  </head>
+  <body class="back">
+    <header>
+      <img src="./images/logo.png" class="logo" />
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav class="nav-bar">
+        <ul class="nav-items">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./portfolio.html">Portfolio</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+    </header>
+    <section id="pageDescription" class="contact">
+      <div class="content">
+        <h2>Contact me</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio facere
+          dolores quibusdam! Nihil praesentium doloremque quo necessitatibus
+          error odit quaerat inventore, molestias laborum quidem ullam dicta
+          quia sequi excepturi perspiciatis aliquid porro itaque accusamus est
+          adipisci voluptatum iure rerum minima! Nemo ipsum qui porro adipisci
+          voluptatem maxime? Vitae, mollitia minima.
+        </p>
+      </div>
+      <div class="container">
+        <div class="contactInfo">
+          <div class="box">
+            <div class="icon"><i class="fa fa-map-marker"></i></div>
+            <div class="text">
+              <h3>Address</h3>
+              <p>55787 Romania, <br />Some Street <br />VL</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+            <div class="text">
+              <h3>Phone</h3>
+              <p>+40761726969</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
+            <div class="text">
+              <h3>Email</h3>
+              <p>dinuandreeae@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="contactForm">
+          <form>
+            <h2>Send Message</h2>
+            <div class="inputBox">
+              <input type="text" required />
+              <label>Full Name</label>
+            </div>
+            <div class="inputBox">
+              <input type="text" required />
+              <label>Email</label>
+            </div>
+            <div class="inputBox">
+              <textarea required cols="30" rows="10"></textarea>
+              <label>Type your message</label>
+            </div>
+            <div class="inputBox">
+              <input type="submit" value="Send" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer id="pageFooter">
+      <div>
+        <span id="copyright">
+          <script src="./sharedJS.js"></script>
+        </span>
+        &copy;Andreea Dinu
+      </div>
+    </footer>
+  </body>
+</html>

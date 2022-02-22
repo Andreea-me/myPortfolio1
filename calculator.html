@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./shared.css" />
+    <link rel="stylesheet" href="./styleCalculator.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.png" class="logo" />
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav class="nav-bar">
+        <ul class="nav-items">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./portfolio.html">Portfolio</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+    </header>
+    <section id="pageDescription">
+      <h1>This is my calculator</h1>
+      <h6>(it's a nice calculator, i promise)</h6>
+      <div class="calculator">
+        <div class="screen">
+          <div class="previous-operand">
+            <input type="text" id="currentTop" />
+          </div>
+          <div class="current-operand">
+            <input type="text" id="current" />
+          </div>
+        </div>
+        <button class="grid-span" onclick="clearAll()">CA</button>
+        <button class="grid-span" onclick="deleteDigit()">DEL</button>
+        <button onclick="insert('1')">1</button>
+        <button onclick="insert('2')">2</button>
+        <button onclick="insert('3')">3</button>
+        <button onclick="operator('+')">+</button>
+        <button onclick="insert('4')">4</button>
+        <button onclick="insert('5')">5</button>
+        <button onclick="insert('6')">6</button>
+        <button onclick="operator('-')">-</button>
+        <button onclick="insert('7')">7</button>
+        <button onclick="insert('8')">8</button>
+        <button onclick="insert('9')">9</button>
+        <button onclick="operator('*')">*</button>
+        <button onclick="insert('0')" class="grid-span">0</button>
+        <button onclick="calculate()" class="equal">=</button>
+        <button onclick="operator('/')">/</button>
+      </div>
+    </section>
+    <footer id="pageFooter">
+      <div>
+        <span id="copyright">
+          <script src="./sharedJS.js"></script>
+        </span>
+        &copy;Andreea Dinu
+      </div>
+    </footer>
+    <script src="./calculatorJs.js"></script>
+  </body>
+</html>
