@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styleMemoryGame.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rancho&display=swap"
+      rel="stylesheet"
+    />
+    <title>Memory Game</title>
+  </head>
+  <header>
+    <a href="./portfolio.html" class="neon-button">Back to portfolio</a>
+  </header>
+  <body>
+    <div class="overlay-text visible" id="start">
+      Memory game <span class="overlay-text-small">Click to Start</span>
+    </div>
+    <div id="victory-text" class="overlay-text victory">
+      VICTORY
+      <span class="overlay-text-small">Click to restart</span>
+    </div>
+    <div class="grid">
+      <p class="score">
+        Attempts: <span class="attemptsHolder"></span> <br />
+        Points:
+        <span class="foundHolder"></span> <br />
+        Pairs: <span class="pairsHolder"></span>
+      </p>
+      <section class="memory-game">
+        <div class="memory-card" data-image="f-soarelui">
+          <img
+            src="./images/f-soarelui.jpg"
+            alt="Floarea soarelui"
+            class="front-face"
+          />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+        <div class="memory-card" data-image="f-soarelui">
+          <img
+            src="./images/f-soarelui.jpg"
+            alt="Floarea soarelui"
+            class="front-face"
+          />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+
+        <div class="memory-card" data-image="floare-rosie">
+          <img
+            src="./images/j-rosie.jpg"
+            alt="Floare rosie"
+            class="front-face"
+          />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+        <div class="memory-card" data-image="floare-rosie">
+          <img
+            src="./images/j-rosie.jpg"
+            alt="Floare rosie"
+            class="front-face"
+          />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+
+        <div class="memory-card" data-image="jerbera">
+          <img src="./images/jerbera.jpg" alt="jerbera" class="front-face" />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+        <div class="memory-card" data-image="jerbera">
+          <img src="./images/jerbera.jpg" alt="jerbera" class="front-face" />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+
+        <div class="memory-card" data-image="lalele">
+          <img src="./images/lalele.jpg" alt="Lalele" class="front-face" />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+        <div class="memory-card" data-image="lalele">
+          <img src="./images/lalele.jpg" alt="Lalele" class="front-face" />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+
+        <div class="memory-card" data-image="little-roses">
+          <img
+            src="./images/little-roses.jpg"
+            alt="Little roses"
+            class="front-face"
+          />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+        <div class="memory-card" data-image="little-roses">
+          <img
+            src="./images/little-roses.jpg"
+            alt="little roses"
+            class="front-face"
+          />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+
+        <div class="memory-card" data-image="t-roz">
+          <img
+            src="./images/t-roz.jpg"
+            alt="Trandafir roz"
+            class="front-face"
+          />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+        <div class="memory-card" data-image="t-roz">
+          <img
+            src="./images/t-roz.jpg"
+            alt="Trandafir roz"
+            class="front-face"
+          />
+          <img src="./images/q-mark.jpg" alt="q-mark" class="back-face" />
+        </div>
+      </section>
+    </div>
+    <script src="./memory-gameJS.js"></script>
+  </body>
+</html>
