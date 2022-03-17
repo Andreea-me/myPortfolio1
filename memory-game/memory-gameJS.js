@@ -8,16 +8,13 @@ const pairsHolder = document.querySelector(".pairsHolder");
 var attempts = 0;
 var foundCards = 0;
 var pairs = 0;
+attemptHolder.textContent = attempts;
+foundHolder.textContent = foundCards;
+pairsHolder.textContent = pairs;
 
 let hasFlippedCard = false;
 let lockCards = false;
 let firstCard, secondCard;
-
-function initializeContent() {
-  attemptHolder.textContent = attempts;
-  foundHolder.textContent = foundCards;
-  pairsHolder.textContent = pairs;
-}
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", ready());
@@ -36,7 +33,6 @@ function ready() {
 }
 
 function flipCard() {
-  debugger;
   if (lockCards) return;
   if (this === firstCard) return;
   this.classList.add("flip");
@@ -63,11 +59,12 @@ function checkForMatch() {
     foundCards -= 2;
     unflipCards();
   }
-  initializeContent();
+  attemptHolder.textContent = attempts;
+  foundHolder.textContent = foundCards;
+  pairsHolder.textContent = pairs;
 }
 
 function disableCards() {
-  debugger;
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
   resetBoard();
@@ -102,8 +99,23 @@ function victory() {
 }
 
 document.querySelector(".victory").addEventListener("click", function () {
-  window.location.reload();
-  ready();
+  attempts = 0;
+  foundCards = 0;
+  pairs = 0;
+
+  attemptHolder.textContent = attempts;
+  foundHolder.textContent = foundCards;
+  pairsHolder.textContent = pairs;
+
+  cards.forEach((card) => card.classList.remove("flip"));
+  cards.forEach((card) => card.addEventListener("click", flipCard));
+
+  cards.forEach((card) => {
+    let randomPosition = Math.floor(Math.random() * 12);
+    card.style.order = randomPosition;
+  });
+  // window.location.reload();
+  // ready();
 });
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
