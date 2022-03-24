@@ -119,3 +119,18 @@ document.querySelector(".victory").addEventListener("click", function () {
 });
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
+
+//modal
+
+const modal = document.querySelector("#modal");
+const openModal = document.querySelector(".open-button");
+const closeModal = document.querySelector(".close-button");
+
+openModal.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});
+

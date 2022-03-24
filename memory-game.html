@@ -17,6 +17,7 @@
     <a href="./portfolio.html" class="neon-button">Back to portfolio</a>
   </header>
   <body>
+     <button class="button open-button">open modal</button>
     <div class="overlay-text visible" id="start">
       Memory game <span class="overlay-text-small">Click to Start</span>
     </div>
@@ -119,6 +120,20 @@
         </div>
       </section>
     </div>
+   
+
+<dialog class="modal" id="modal">
+  <h2>WElcome to memory game!</h2>
+  <p>I am glad you chose to play this game. I am sure you will like it.</p>
+  <p>This game can be personalised just for you! All you have to do is to write down your name and watch the score. Enjoy!</p>
+ 
+  <form class="form" method="dialog">
+    <label>Your name <input type="text"></label>
+    <button class="button" type="submit">submit form</button>
+     <button class="button close-button">close modal</button>
+  </form>
+
+</dialog>
     <script src="./memory-game/memory-gameJS.js"></script>
   </body>
 </html>

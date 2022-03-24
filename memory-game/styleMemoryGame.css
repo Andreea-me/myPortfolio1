@@ -6,7 +6,7 @@
 
 :root {
   --navBar: rgba(248, 46, 46, 0.6);
-  --sectionText: rgb(160, 224, 243);
+  --sectionText: rgb(236, 225, 70);
   --clr-neon: hsl(351, 75%, 65%);
   --clr-bg: hsl(323 21% 16%);
 }
@@ -152,3 +152,43 @@ img {
   color: var(--clr-bg);
   text-shadow: none;
 }
+
+/*MOdal ---------- */
+.modal {
+   padding: 1em;
+  max-width: 50ch;
+   border: 0;
+ box-shadow: 0 0 1em rgb(0 0 0 / .3);
+}
+
+.modal::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}
+
+/* extra styling */
+
+h1 em {
+  color: var(--cyan-9);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.button {
+  border: 0;
+  cursor: pointer;
+  background: var(--gray-8);
+  color: var(--gray-2);
+  font-weight: 700;
+  padding: var(--size-2) var(--size-4);
+}
+
+.button:hover,
+.button:focus {
+  background: var(--cyan-9);
+}
+
+form {
+  display: grid;
+  gap: 1em;
+}
+
