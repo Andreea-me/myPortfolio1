@@ -14,10 +14,12 @@
     <title>Memory Game</title>
   </head>
   <header>
-    <a href="./portfolio.html" class="neon-button">Back to portfolio</a>
+    <a href="./portfolio.html" class="neon-button">Back to portfolio</a> <br>
+    <button class="button open-button">
+      Open modal</button>
   </header>
   <body>
-     <button class="button open-button">open modal</button>
+     <label class="player">Hello, <input type="text" id="result"> <br> nice to meet you!</label>
     <div class="overlay-text visible" id="start">
       Memory game <span class="overlay-text-small">Click to Start</span>
     </div>
@@ -128,8 +130,8 @@
   <p>This game can be personalised just for you! All you have to do is to write down your name and watch the score. Enjoy!</p>
  
   <form class="form" method="dialog">
-    <label>Your name <input type="text"></label>
-    <button class="button" type="submit">submit form</button>
+    <label>Your name <input type="text" id="name"></label>
+    <button class="button" type="submit" onclick="getName()">submit form</button>
      <button class="button close-button">close modal</button>
   </form>
 

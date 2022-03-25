@@ -134,3 +134,7 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
+function getName(){
+   let userInput = document.getElementById("name").value;
+    document.getElementById("result").value = userInput;
+}

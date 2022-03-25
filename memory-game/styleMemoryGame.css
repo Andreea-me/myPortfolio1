@@ -9,6 +9,10 @@
   --sectionText: rgb(236, 225, 70);
   --clr-neon: hsl(351, 75%, 65%);
   --clr-bg: hsl(323 21% 16%);
+  --gray-2: gray;
+  --gray-8: rgb(236, 225, 70);
+  --size-2: 0.5em;
+  --size-4: 1em;
 }
 
 body {
@@ -29,13 +33,13 @@ body {
   flex-direction: column;
   z-index: 99;
   color: darkmagenta;
-  font-family: 'Rancho', cursive;
+  font-family: "Rancho", cursive;
   transition: background-color 500ms, font-size 500ms;
   cursor: pointer;
 }
 
-.overlay-text-small{
-  font-size: .3em;
+.overlay-text-small {
+  font-size: 0.3em;
 }
 
 .overlay-text.visible {
@@ -121,7 +125,8 @@ img {
   color: rgb(240, 203, 220);
 }
 
-.neon-button {
+.neon-button,
+.button {
   font-size: 1em;
   margin: 0.5em;
   display: inline-block;
@@ -134,10 +139,10 @@ img {
   border-radius: 0.25em;
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45 var(--sectionText);
   box-shadow: inset 0 0 0.5em 0 var(--sectionText),
-   0 0 0.5em 0 var(--sectionText);
+    0 0 0.5em 0 var(--sectionText);
 }
 
-.neon-button::before{
+.neon-button::before {
   content: "";
   position: relative;
   background: var(--sectionText);
@@ -147,7 +152,7 @@ img {
   height: 100%;
 }
 
-.neon-button:hover{
+.neon-button:hover {
   background: var(--clr-neon);
   color: var(--clr-bg);
   text-shadow: none;
@@ -155,10 +160,12 @@ img {
 
 /*MOdal ---------- */
 .modal {
-   padding: 1em;
+  margin: auto;
   max-width: 50ch;
-   border: 0;
- box-shadow: 0 0 1em rgb(0 0 0 / .3);
+  padding: 1em;
+  border: 0;
+  justify-content: center;
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
 }
 
 .modal::backdrop {
@@ -168,7 +175,7 @@ img {
 /* extra styling */
 
 h1 em {
-  color: var(--cyan-9);
+  color: var(--clr-neon);
   text-decoration: underline;
   text-underline-offset: 0.25em;
 }
@@ -176,15 +183,17 @@ h1 em {
 .button {
   border: 0;
   cursor: pointer;
-  background: var(--gray-8);
-  color: var(--gray-2);
+  background: coral;
+  color: var(--sectionText);
   font-weight: 700;
+  align-items: center;
   padding: var(--size-2) var(--size-4);
 }
 
 .button:hover,
 .button:focus {
-  background: var(--cyan-9);
+  background: var(--clr-neon);
+  color: black;
 }
 
 form {
@@ -192,3 +201,17 @@ form {
   gap: 1em;
 }
 
+.player {
+  margin-top: 300px;
+  color: rgb(240, 203, 220);
+  font-weight: 700;
+  font-size: 2em;
+}
+
+#result{
+  background-color: coral;
+  color: aliceblue;
+  font-weight: 700;
+  font-size: 1em;
+  border: none;
+}
