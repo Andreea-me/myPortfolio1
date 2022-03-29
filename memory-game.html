@@ -16,7 +16,9 @@
   <header>
     <a href="./portfolio.html" class="neon-button">Back to portfolio</a> <br>
     <button class="button open-button">
-      Open modal</button>
+      Click me</button>
+      <button class="button open-button1">
+      Top players</button>
   </header>
   <body>
      <label class="player">Hello, <input type="text" id="result"> <br> nice to meet you!</label>
@@ -125,8 +127,7 @@
    
 
 <dialog class="modal" id="modal">
-  <h2>WElcome to memory game!</h2>
-  <p>I am glad you chose to play this game. I am sure you will like it.</p>
+  <h2>Welcome to memory game!</h2>
   <p>This game can be personalised just for you! All you have to do is to write down your name and watch the score. Enjoy!</p>
  
   <form class="form" method="dialog">
@@ -134,7 +135,35 @@
     <button class="button" type="submit" onclick="getName()">submit form</button>
      <button class="button close-button">close modal</button>
   </form>
+</dialog>
 
+<dialog class="modal1" id="player">
+  <h2>Best scores</h2>
+  <p>Can you beat your score? Let's see!</p>
+  <table>
+    <tr>
+      <th>1.</th>
+      <th>Andreea</th>
+    </tr>
+    <tr>
+      <th>2.</th>
+      <th>b</th>
+    </tr>
+    <tr>
+      <th>3.</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>4.</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>5.</th>
+      <th></th>
+    </tr>
+  </table>
+     <button class="button close-button1">close modal</button>
+  </form>
 </dialog>
     <script src="./memory-game/memory-gameJS.js"></script>
   </body>

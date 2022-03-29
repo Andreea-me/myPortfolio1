@@ -138,3 +138,15 @@ function getName(){
    let userInput = document.getElementById("name").value;
     document.getElementById("result").value = userInput;
 }
+
+const modal1 = document.querySelector("#player");
+const openModal1 = document.querySelector(".open-button1");
+const closeModal1 = document.querySelector(".close-button1");
+
+openModal1.addEventListener("click", () => {
+  modal1.showModal();
+});
+
+closeModal1.addEventListener("click", () => {
+  modal1.close();
+});

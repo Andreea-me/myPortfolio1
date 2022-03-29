@@ -5,12 +5,9 @@
 }
 
 :root {
-  --navBar: rgba(248, 46, 46, 0.6);
-  --sectionText: rgb(236, 225, 70);
-  --clr-neon: hsl(351, 75%, 65%);
+  --sectionText: #f7e012;
+  --text: #1e2631;
   --clr-bg: hsl(323 21% 16%);
-  --gray-2: gray;
-  --gray-8: rgb(236, 225, 70);
   --size-2: 0.5em;
   --size-4: 1em;
 }
@@ -18,7 +15,7 @@
 body {
   height: 100vh;
   display: flex;
-  background: coral;
+  background: #EDF8FC;
 }
 
 .overlay-text {
@@ -62,7 +59,6 @@ body {
   grid-area: section;
   align-self: center;
   justify-self: center;
-  border: 3px solid deeppink;
   margin: auto;
   width: 640px;
   height: 640px;
@@ -96,7 +92,7 @@ body {
   padding: 10px;
   position: absolute;
   border-radius: 5px;
-  background: pink;
+  background: #e1a412;
   backface-visibility: hidden;
 }
 
@@ -122,20 +118,20 @@ img {
   grid-area: score;
   align-self: center;
   justify-self: center;
-  color: rgb(240, 203, 220);
+  color: #ED3337;
 }
 
 .neon-button,
 .button {
   font-size: 1em;
-  margin: 0.5em;
+  margin: 0.4em;
   display: inline-block;
   flex-direction: column;
   cursor: pointer;
   text-decoration: none;
   border: var(--sectionText) 4px solid;
   padding: 0.25em 0.5em;
-  color: var(--sectionText);
+  color: var(--text);
   border-radius: 0.25em;
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45 var(--sectionText);
   box-shadow: inset 0 0 0.5em 0 var(--sectionText),
@@ -153,13 +149,13 @@ img {
 }
 
 .neon-button:hover {
-  background: var(--clr-neon);
-  color: var(--clr-bg);
+  background: #e1a412;
+  color: #1e2631;
   text-shadow: none;
 }
 
 /*MOdal ---------- */
-.modal {
+.modal, .modal1 {
   margin: auto;
   max-width: 50ch;
   padding: 1em;
@@ -181,19 +177,18 @@ h1 em {
 }
 
 .button {
-  border: 0;
+  border: 4px solid var(--sectionText);
   cursor: pointer;
-  background: coral;
-  color: var(--sectionText);
-  font-weight: 700;
+  color: #ED3337;
+  font-weight: 500;
   align-items: center;
-  padding: var(--size-2) var(--size-4);
+  padding: var(--size-2);
 }
 
 .button:hover,
 .button:focus {
-  background: var(--clr-neon);
-  color: black;
+  background: #e1a412;
+  color: #434c4c;
 }
 
 form {
@@ -202,16 +197,29 @@ form {
 }
 
 .player {
-  margin-top: 300px;
-  color: rgb(240, 203, 220);
+  margin-top: 350px;
+  color: #1e2631;
   font-weight: 700;
   font-size: 2em;
 }
 
 #result{
-  background-color: coral;
-  color: aliceblue;
+  background-color: #EDF8FC;
+  color: #e1a412;
   font-weight: 700;
   font-size: 1em;
   border: none;
+}
+
+table, th, td {
+  border:1px solid #1e2631;
+  margin: auto;
+}
+
+th{
+  padding: 10px;
+}
+
+h2{
+  margin-bottom: 15px;
 }
