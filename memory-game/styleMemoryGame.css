@@ -114,7 +114,7 @@ img {
   gap: 10px;
 }
 
-.score {
+.scores {
   grid-area: score;
   align-self: center;
   justify-self: center;
@@ -222,4 +222,20 @@ th{
 
 h2{
   margin-bottom: 15px;
+}
+
+/* HIGHSCORES */
+#highScoresList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 4rem;
+}
+
+.high-score {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.high-score:hover {
+  transform: scale(1.025);
 }

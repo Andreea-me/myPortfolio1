@@ -4,10 +4,12 @@ let cards = [...card];
 const attemptHolder = document.querySelector(".attemptsHolder");
 const foundHolder = document.querySelector(".foundHolder");
 const pairsHolder = document.querySelector(".pairsHolder");
+const scoreBoard = document.querySelector(".score");
 
 var attempts = 0;
 var foundCards = 0;
 var pairs = 0;
+
 attemptHolder.textContent = attempts;
 foundHolder.textContent = foundCards;
 pairsHolder.textContent = pairs;
@@ -15,6 +17,7 @@ pairsHolder.textContent = pairs;
 let hasFlippedCard = false;
 let lockCards = false;
 let firstCard, secondCard;
+let score = 0;
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", ready());
@@ -54,7 +57,9 @@ function checkForMatch() {
     foundCards += 10;
     pairs++;
     disableCards();
-    victory();
+    if (pairs == 6) {
+      victory();
+    }
   } else {
     foundCards -= 2;
     unflipCards();
@@ -93,9 +98,10 @@ function resetBoard() {
 })();
 
 function victory() {
-  if (pairs == 6) {
-    document.getElementById("victory-text").classList.add("visible");
-  }
+  document.getElementById("victory-text").classList.add("visible");
+  score = foundCards;
+  window.prompt(`${score} – Top score! What's your name?`);
+  console.log("Var score este egal cu c=  " + score);
 }
 
 document.querySelector(".victory").addEventListener("click", function () {
@@ -114,6 +120,7 @@ document.querySelector(".victory").addEventListener("click", function () {
     let randomPosition = Math.floor(Math.random() * 12);
     card.style.order = randomPosition;
   });
+
   // window.location.reload();
   // ready();
 });
@@ -134,9 +141,9 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
-function getName(){
-   let userInput = document.getElementById("name").value;
-    document.getElementById("result").value = userInput;
+function getName() {
+  let userInput = document.getElementById("name").value;
+  document.getElementById("result").value = userInput;
 }
 
 const modal1 = document.querySelector("#player");
@@ -150,3 +157,49 @@ openModal1.addEventListener("click", () => {
 closeModal1.addEventListener("click", () => {
   modal1.close();
 });
+
+//highscores
+const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+const scoreList = document.querySelector(".scoretable");
+
+function populateTable() {
+  scoreList.innerHTML = highscores
+    .map((row) => {
+      return `<tr><td>${row.clicker}</td><td>${row.foundCards}</tr>`;
+    })
+    .join("");
+  console.log("Populare tab");
+  // scores.toString();
+  // for (let i = 0; i < 5; i++) {
+  //   console.log("valoarea lui scores[" + i + "]=" + scores[i]);
+  // }
+
+  // document.getElementById("scoretable").innerHTML = scores.join(" ");
+  // document.getElementById("scoretable").innerHTML = scores[0];
+}
+
+function checkScore() {
+  let worstScore = 0;
+  if (highscores.length > 4) {
+    worstScore = highscores[highscores.length - 1].foundCards;
+  }
+  if (foundCards > worstScore) {
+    const clicker = window.prompt(`${foundCards} – Top score! What's your name?`);
+    highscores.push({ foundCards, clicker });
+  }
+  highscores.sort((a, b) => (a.score > b.score ? -1 : 1));
+
+  if (highscores.length > 5) {
+    highscores.pop();
+  }
+
+  localStorage.setItem("highscores", JSON.stringify(highscores));
+}
+
+function clearScores() {
+  highscores.splice(0, highscores.length);
+  localStorage.setItem("highscores", JSON.stringify(highscores));
+  populateTable();
+}
+
+populateTable();
