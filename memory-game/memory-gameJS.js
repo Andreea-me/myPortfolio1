@@ -10,6 +10,10 @@ var attempts = 0;
 var foundCards = 0;
 var pairs = 0;
 
+//highscores
+const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+const scoreList = document.querySelector(".scoretable");
+
 attemptHolder.textContent = attempts;
 foundHolder.textContent = foundCards;
 pairsHolder.textContent = pairs;
@@ -100,11 +104,16 @@ function resetBoard() {
 function victory() {
   document.getElementById("victory-text").classList.add("visible");
   score = foundCards;
-  window.prompt(`${score} – Top score! What's your name?`);
+
   console.log("Var score este egal cu c=  " + score);
 }
 
 document.querySelector(".victory").addEventListener("click", function () {
+  checkScore();
+  console.log(" numele estre : " + highscores[0].name);
+  console.log(" scorul  estre : " + highscores[0].score);
+  localStorage.setItem("highscores", JSON.stringify(highscores));
+
   attempts = 0;
   foundCards = 0;
   pairs = 0;
@@ -133,13 +142,13 @@ const modal = document.querySelector("#modal");
 const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
 
-openModal.addEventListener("click", () => {
+openModal.addEventListener('click', () => {
   modal.showModal();
-});
+})
 
-closeModal.addEventListener("click", () => {
+closeModal.addEventListener('click', () => {
   modal.close();
-});
+})
 
 function getName() {
   let userInput = document.getElementById("name").value;
@@ -150,25 +159,14 @@ const modal1 = document.querySelector("#player");
 const openModal1 = document.querySelector(".open-button1");
 const closeModal1 = document.querySelector(".close-button1");
 
-openModal1.addEventListener("click", () => {
-  modal1.showModal();
-});
-
-closeModal1.addEventListener("click", () => {
-  modal1.close();
-});
-
-//highscores
-const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
-const scoreList = document.querySelector(".scoretable");
-
 function populateTable() {
   scoreList.innerHTML = highscores
-    .map((row) => {
-      return `<tr><td>${row.clicker}</td><td>${row.foundCards}</tr>`;
+    .map((highscores) => {
+      return `<tr><td>${highscores.name}</td><td>${highscores.score}</tr>`;
     })
     .join("");
-  console.log("Populare tab");
+  console.log("Populate tabel");
+
   // scores.toString();
   // for (let i = 0; i < 5; i++) {
   //   console.log("valoarea lui scores[" + i + "]=" + scores[i]);
@@ -184,22 +182,22 @@ function checkScore() {
     worstScore = highscores[highscores.length - 1].foundCards;
   }
   if (foundCards > worstScore) {
-    const clicker = window.prompt(`${foundCards} – Top score! What's your name?`);
-    highscores.push({ foundCards, clicker });
+    const name = window.prompt(`${score} – Top score! What's your name?`);
+    highscores.push({ name, score });
   }
   highscores.sort((a, b) => (a.score > b.score ? -1 : 1));
 
   if (highscores.length > 5) {
     highscores.pop();
   }
-
+  populateTable();
   localStorage.setItem("highscores", JSON.stringify(highscores));
 }
 
 function clearScores() {
   highscores.splice(0, highscores.length);
   localStorage.setItem("highscores", JSON.stringify(highscores));
-  populateTable();
+  populateTable(highscores, scoreList);
 }
 
 populateTable();

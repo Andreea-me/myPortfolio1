@@ -14,21 +14,24 @@
     <title>Memory Game</title>
   </head>
   <header>
-    <a href="./portfolio.html" class="neon-button">Back to portfolio</a> <br>
-    <button class="button open-button">
-      Click me</button>
-      <!-- <button class="button open-button1" onclick="populateTable()">
+    <a href="./portfolio.html" class="neon-button">Back to portfolio</a> <br />
+    <button class="button open-button">Click me</button>
+    <!-- <button class="button open-button1" onclick="populateTable()">
       Top players</button> -->
   </header>
   <body>
-     <label class="player">Hello, <input type="text" id="result"> <br> nice to meet you!</label>
-     <div class="highscore">
-  <h2>Top 5 players</h2>
-  <h3>(on this device)</h3>
-  <button onClick="clearScores()">Clear</button>
-  <table class="scoretable" id="scoretable">
-  </table>
-</div>
+    <label class="player"
+      >Hello, <input type="text" id="result" /> <br />
+      nice to meet you!</label
+    >
+    <div class="highscore">
+      <h2>Top 5 players</h2>
+      <h3>(on this device)</h3>
+      <button onClick="clearScores()">Clear</button>
+      <table class="scoretable">
+        // aici e tot
+      </table>
+    </div>
     <div class="overlay-text visible" id="start">
       Memory game <span class="overlay-text-small">Click to Start</span>
     </div>
@@ -38,7 +41,6 @@
     </div>
     <div class="grid">
       <div class="scores">
-
         Attempts: <span class="attemptsHolder"></span> <br />
         Points:
         <span class="foundHolder"></span> <br />
@@ -132,20 +134,24 @@
         </div>
       </section>
     </div>
-   
 
-<dialog class="modal" id="modal">
-  <h2>Welcome to memory game!</h2>
-  <p>This game can be personalised just for you! All you have to do is to write down your name and watch the score. Enjoy!</p>
- 
-  <form class="form" method="dialog">
-    <label>Your name <input type="text" id="name" name="username"></label>
-    <button class="button" type="submit" onclick="getName()">submit form</button>
-     <button class="button close-button">close modal</button>
-  </form>
-</dialog>
+    <dialog class="modal" id="modal">
+      <h2>Welcome to memory game!</h2>
+      <p>
+        This game can be personalised just for you! All you have to do is to
+        write down your name and watch the score. Enjoy!
+      </p>
 
-<!-- <dialog class="modal1" id="player">
+      <form class="form" method="dialog">
+        <label>Your name <input type="text" id="name" name="username" /></label>
+        <button class="button" type="submit" onclick="getName()">
+          submit form
+        </button>
+        <button class="button close-button">close modal</button>
+      </form>
+    </dialog>
+
+    <!-- <dialog class="modal1" id="player">
   <div class="highscore">
   <h2>Top 5 players</h2>
   <h3>(on this device)</h3>
