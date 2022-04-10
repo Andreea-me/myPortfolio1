@@ -10,10 +10,6 @@ var attempts = 0;
 var foundCards = 0;
 var pairs = 0;
 
-//highscores
-const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
-const scoreList = document.querySelector(".scoretable");
-
 attemptHolder.textContent = attempts;
 foundHolder.textContent = foundCards;
 pairsHolder.textContent = pairs;
@@ -104,14 +100,10 @@ function resetBoard() {
 function victory() {
   document.getElementById("victory-text").classList.add("visible");
   score = foundCards;
-
-  console.log("Var score este egal cu c=  " + score);
 }
 
 document.querySelector(".victory").addEventListener("click", function () {
   checkScore();
-  console.log(" numele estre : " + highscores[0].name);
-  console.log(" scorul  estre : " + highscores[0].score);
   localStorage.setItem("highscores", JSON.stringify(highscores));
 
   attempts = 0;
@@ -129,59 +121,44 @@ document.querySelector(".victory").addEventListener("click", function () {
     let randomPosition = Math.floor(Math.random() * 12);
     card.style.order = randomPosition;
   });
-
-  // window.location.reload();
-  // ready();
 });
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
 
 //modal
 
-const modal = document.querySelector("#modal");
-const openModal = document.querySelector(".open-button");
-const closeModal = document.querySelector(".close-button");
-
-openModal.addEventListener('click', () => {
-  modal.showModal();
-})
-
-closeModal.addEventListener('click', () => {
-  modal.close();
-})
-
-function getName() {
-  let userInput = document.getElementById("name").value;
-  document.getElementById("result").value = userInput;
-}
-
 const modal1 = document.querySelector("#player");
 const openModal1 = document.querySelector(".open-button1");
 const closeModal1 = document.querySelector(".close-button1");
 
+openModal1.addEventListener("click", () => {
+  modal1.showModal();
+});
+
+closeModal1.addEventListener("click", () => {
+  modal1.close();
+});
+
+//highscores
+const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+const scoreList = document.querySelector(".scoretable");
+
 function populateTable() {
   scoreList.innerHTML = highscores
-    .map((highscores) => {
-      return `<tr><td>${highscores.name}</td><td>${highscores.score}</tr>`;
-    })
+    .map((highscore) => buildTableRow(highscore))
     .join("");
-  console.log("Populate tabel");
+}
 
-  // scores.toString();
-  // for (let i = 0; i < 5; i++) {
-  //   console.log("valoarea lui scores[" + i + "]=" + scores[i]);
-  // }
-
-  // document.getElementById("scoretable").innerHTML = scores.join(" ");
-  // document.getElementById("scoretable").innerHTML = scores[0];
+function buildTableRow(highscore) {
+  return `<tr><td>${highscore.name}</td><td>${highscore.score}</tr>`;
 }
 
 function checkScore() {
   let worstScore = 0;
   if (highscores.length > 4) {
-    worstScore = highscores[highscores.length - 1].foundCards;
+    worstScore = highscores[highscores.length - 1].score;
   }
-  if (foundCards > worstScore) {
+  if (score > worstScore) {
     const name = window.prompt(`${score} – Top score! What's your name?`);
     highscores.push({ name, score });
   }
@@ -197,7 +174,5 @@ function checkScore() {
 function clearScores() {
   highscores.splice(0, highscores.length);
   localStorage.setItem("highscores", JSON.stringify(highscores));
-  populateTable(highscores, scoreList);
+  populateTable();
 }
-
-populateTable();
